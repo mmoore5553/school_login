@@ -69,7 +69,7 @@
               
               <div class ="enroll_div" >
               <h2 class="label-info">Add User</h2>
-                   <form class="" role="form" action="add_student.php" method="post">
+                   <form class="" role="form" action="add_user.php" method="post">
                       <div class="form-group">
                         <label for="userName">User Name:</label>
                         <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
