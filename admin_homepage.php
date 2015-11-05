@@ -46,7 +46,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand enroll_link" href="">Add Student</a>
+          <a class="navbar-brand enroll_link" href="add_user.php">Add User</a>
           <a class="navbar-brand add_course_link" href="#">Add Course</a>
         </div>
 
@@ -67,8 +67,8 @@
 
               <div class="col-md-3">
                 
-                   <a class="btn btn-default" href="add_student.php">Add Student</a> 
-                    <li><a href="logout.php">Logout</a></li>
+                   <a class="btn btn-default" href="add_user.php">Add User</a> 
+                   <a class="btn btn-default" href="add_course.php">Add Course</a> 
                 
               </div>
 
