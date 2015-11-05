@@ -48,7 +48,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand enroll_link" href="">Add Student</a>
+          <a class="navbar-brand enroll_link" href="">Add User</a>
           <a class="navbar-brand add_course_link" href="#">Add Course</a>
         </div>
 
@@ -68,7 +68,7 @@
               <h2>This is Admin area.</h2>
               
               <div class ="enroll_div" >
-              <h2 class="label-info">Add Student</h2>
+              <h2 class="label-info">Add User</h2>
                    <form class="" role="form" action="add_student.php" method="post">
                       <div class="form-group">
                         <label for="userName">User Name:</label>
