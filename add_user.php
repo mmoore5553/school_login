@@ -4,24 +4,24 @@
 
     session_start();
     $role = $_SESSION['session_user_role'];
+      if(isset($_POST['submit'])){
+          $sql_query = "INSERT INTO users (username,password,role) VALUES (:username,:password,:role)";
+                                                    
+          $sql = $database_connection->prepare($sql_query);
 
-    $sql_query = "INSERT INTO users (username,password,role) VALUES (:username,:password,:role)";
-                                              
-    $sql = $database_connection->prepare($sql_query);
+                                                
+          $sql->bindParam(':username', $_POST['username'], PDO::PARAM_STR);       
+          $sql->bindParam(':password', $_POST['password'], PDO::PARAM_STR); 
+          $sql->bindParam(':role', $_POST['role'], PDO::PARAM_STR);
+          $sql->bindParam(':id', $id);
+          
+          $data = array('username' => $_POST['username'] , 'password' => $_POST['password'], 'role' => $_POST['role']);
 
-   // $data = array('username' => $_POST['username'] , 'password' => $_POST['password'], 'role' => $_POST['role']);
-
-
-                                          
-    $sql->bindParam(':username', $_POST['username'], PDO::PARAM_STR);       
-    $sql->bindParam(':password', $_POST['password'], PDO::PARAM_STR); 
-    $sql->bindParam(':role', $_POST['role'], PDO::PARAM_STR);
-    
-    $data = array('username' => $_POST['username'] , 'password' => $_POST['password'], 'role' => $_POST['role']);
-
-    $sql->execute($data); 
+          $sql->execute($data); 
 
 
+          header("Location: list_users.php");
+      }
 ?>
 
 
@@ -82,7 +82,7 @@
                     <label for="Role">Role: (Admin or User )</label>
                     <input type="text" class="form-control" id="role" name="role" placeholder="Role is admin or user">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button type="submit" name= "submit"class="btn btn-default">Submit</button>
                  </form>
               </div>
 
@@ -96,21 +96,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-  //  <script>
-
-
-  //     $(document).ready(function() {
-  //    $('.enroll_div').hide();
-  // });
-      
-
-  //     $('.enroll_link').click(function(e) {
-  //     e.preventDefault(); 
-  //     $('.enroll_div').toggle(); 
-  //     });
-      
-
-  //   </script>
 
 
     </body>
