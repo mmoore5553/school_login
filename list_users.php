@@ -76,7 +76,7 @@
                  echo "</td><td>";
                  echo "<a style='color: red;' href='delete_users.php?id=" . $row['user_id'] . "'>X</a>";
                  echo "</td><td>";
-                 echo "<a href='edit_courses.php?id=" . $row['user_id'] . "'>Edit</a>";
+                 echo "<a href='edit_users.php?id=" . $row['user_id'] . "'>Edit</a>";
                  echo "</td>";
                  echo "</tr>";
                     }
